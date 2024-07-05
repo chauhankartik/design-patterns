@@ -1,0 +1,11 @@
+Strategy Pattern
+
+Identifier:
+    * Code duplication at children of same level (e.g. Sports vehicle and offroad vehicle needs same code/strategy to drive)
+
+Implementation rule:
+    * Parent class methods to be segregated out to a interface (strategy interface)
+    * strategy interface to have concrete implementations
+    * parent class uses Strategy interface as dependency inversion (constructor injection) e.g. Vehicle has-a drive strategy
+    * Extending classes to select strategy/algorithm of choice
+    * Final method to be invoked by parent class method on DI interface member
