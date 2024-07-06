@@ -1,0 +1,14 @@
+BUILDER PATTERN
+
+Where to Apply?
+    * Lot of optional fields while creating an object ? Go for builder
+    * Big constructor parameter list ? Multiple small constructor ? Bad idea. 2^n constructors
+    * Step by step object creation process
+
+How to Apply ?
+    * Single constructor taking a builder as a parameter
+    * Builder class will have all parameters of parent class
+    * setter methods will set a field and return builder
+    * Builder can be interface/abstract
+    * build(this) will return final object of parent from builder
+    * Director will be responsible for order to invocation of setter methods of builder
