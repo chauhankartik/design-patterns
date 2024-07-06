@@ -1,0 +1,13 @@
+Observer Pattern
+
+Question:
+    Amazon notify me?
+    News Broadcast?
+
+Identifier:
+    * Broadcasting
+    * Multiple listeners/observers
+
+Theory:
+    * Entities : Observable + Observer(s)
+    * State change of observable -> notify observers

@@ -1,0 +1,52 @@
+Advantages:
+    * Avoid duplicate code
+    * Easy to maintain
+    * Easy to understand
+    * Flexible Software
+    * Reduce Complexity
+
+SINGLE RESPONSIBILITY: [Easy to maintain, Easy to understand]
+    * A class should have only 1 reason to change
+    e.g. Invoice class - 3 methods
+           calculateTotal(), saveToDb(), printInvoice()
+           3 reasons to change, change in any methods results in change in class
+         Invoice class - 1 method
+            calculateTotal()
+         InvoiceDAO class - 1 method
+            saveToDb()
+         InvoicePrinter class - 1 method
+
+OPEN/CLOSED PRINCIPLE:
+    * Open for extension but closed for modification
+    e.g. Save to file required in InvoiceDAO class, instead of modifying already tested class i.e. InvoiceDAO, extend it to a new class
+        interface InvoiceDAO - 1 Method
+            save(Invoice invoice)
+        DatabaseInvoiceDAO implements InvoiceDAO
+        FileInvoiceDAO implements InvoiceDAO
+
+LISKOV SUBSTITUTION PRINCIPLE:
+    * If class B is subtype of class A, then we should be able to replace object of A with B without breaking the behaviour of the program
+      i.e. subclass should extend the capability of parent class not narrow it down
+
+    e.g. interface Bike - 2 methods
+        turnOnEngine()
+        accelerate()
+
+        class Motorcycle implements Bike
+        class Bicycle implements Bike - turnOnEngine() throws exception - breaking functionality
+
+INTERFACE SEGMENTED PRINCIPLE:
+    * Interfaces should be such, that client should not implement unnecessary functions they do not need
+    e.g. RestaurantEmployee - 3 methods
+        servesFood(), cooksFood(), doDishes()
+
+        class Waiter implements RestaurantEmployee:
+            cooksFood() // no impl required, doDishes() // no impl required
+
+        interface RestaurantEmployee = interface WaiterInterface + interface ChefInterface + interface WorkedInterface
+
+DEPENDENCY INVERSION PRINCIPLE:
+    * Class should depend on interfaces rather than concrete classes
+        use interface members + constructor injection
+
+
